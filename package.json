@@ -1,0 +1,36 @@
+{
+	"name": "dispatcher",
+	"private": true,
+	"description": "Request dispatcher for Express. Supports controllers with asynchronous actions and abstracts response rendering.",
+	"version": "0.0.1",
+	"author": {
+		"name": "Nik Butenko",
+		"email": "nik@butenko.me"
+	},
+	"contributors": [
+		{
+			"name": "Nik Butenko",
+			"email": "nik@butenko.me"
+		}
+	],
+	"keywords": [
+		"request dispatcher",
+		"dispatcher",
+		"routing",
+		"json",
+		"restful"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/nkbt/node-express-dispatcher.git"
+	},
+	"bugs": {
+		"url": "http://github.com/nkbt/node-express-dispatcher/issues",
+		"email": "nik@butenko.me"
+	},
+	"main": "index",
+	"engines": {
+		"node": "*"
+	},
+	"readmeFilename": "README.md"
+}
