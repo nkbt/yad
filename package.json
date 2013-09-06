@@ -13,6 +13,9 @@
 			"email": "nik@butenko.me"
 		}
 	],
+	"dependencies": {
+		"underscore": "*"
+	},
 	"keywords": [
 		"request dispatcher",
 		"dispatcher",
