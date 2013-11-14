@@ -2,7 +2,7 @@
 	"name": "dispatcher",
 	"private": true,
 	"description": "Request dispatcher for Express. Supports controllers with asynchronous actions and abstracts response rendering.",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"author": {
 		"name": "Nik Butenko",
 		"email": "nik@butenko.me"
