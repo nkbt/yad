@@ -1,8 +1,10 @@
+"use strict";
+
 var _ = require('underscore');
 var errors = require('./lib/errors');
-var router = require('./lib/router');
 var http = require('./lib/http');
-var Dispatcher = require('./lib/dispatcher');
+var auto = require('./lib/auto');
+var dispatch = require('./lib/dispatch');
 
 
 var defaults = {
@@ -15,27 +17,17 @@ var defaults = {
 };
 
 
-function configure(_options) {
+function dispatcher(_options) {
 	var options = _.defaults(_options, defaults);
-	
-	
-	
-	
-	
-	
+
 	return {
-		route: route,
-		defaultRoute: defaultRoute
+		auto: auto(options),
+		dispatch: dispatch(options)
 	};
-	
-//exports.errors = errors;
-//exports.route = route;
-//exports.defaultRoute = defaultRoute;
-//exports.http = require('./http');
 }
 
-configure.http = http;
-configure.errors = errors;
 
 
-module.exports = exports = configure;
+module.exports = exports = dispatcher;
+exports.http = http;
+exports.errors = errors;
