@@ -2,7 +2,7 @@
 	"name": "node-express-dispatcher",
 	"private": true,
 	"description": "Request dispatcher for Express. Supports controllers with asynchronous actions and abstracts response rendering.",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"author": {
 		"name": "Nik Butenko",
 		"email": "nik@butenko.me"
