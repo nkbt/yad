@@ -4,55 +4,87 @@ module.exports = function (grunt) {
 
 	// Project configuration.
 	grunt.initConfig({
-		buster: {
+		simplemocha: {
 			test: {
-				config: 'test/buster.js'
+				src: ['test/*.js'],
+				options: {
+					globals: ['should'],
+					timeout: 3000,
+					ignoreLeaks: false,
+					ui: 'bdd',
+					reporter: 'tap'
+				}
+			},
+			doc: {
+				src: ['test/*.js'],
+				options: {
+					globals: ['should'],
+					timeout: 3000,
+					ignoreLeaks: false,
+					ui: 'bdd',
+					reporter: 'doc'
+				}
+			}
+		},
+		mochaDoc: {
+			src: ['doc/header.html', 'doc/content.html', 'doc/footer.html']
+		},
+		concat: {
+			options: {
+				separator: '\n'
+			},
+			doc: {
+				src: ['doc/header.html', 'content.html', 'doc/footer.html'],
+				dest: 'doc.html'
 			}
 		},
 		jshint: {
-			options: {
-			},
+			options: {},
 			gruntfile: {
 				src: 'Gruntfile.js',
 				options: {
-					jshintrc: '.jshintrc'
+					jshintrc: 'lib/.jshintrc'
 				}
 			},
 			lib: {
 				src: ['lib/*.js', 'lib/**/*.js'],
 				options: {
-					jshintrc: '.jshintrc'
+					jshintrc: 'lib/.jshintrc'
 				}
 			},
 			test: {
-				src: ['test/**/*.js'],
+				src: ['test/*.js', 'test/**/*.js'],
 				options: {
-					jshintrc: '.jshintrc'
+					jshintrc: 'test/.jshintrc'
 				}
 			}
 		},
 		watch: {
 			gruntfile: {
-				files: '<%= jshint.gruntfile.src %>',
+				files: ['lib/*.js', 'lib/**/*.js'],
 				tasks: ['jshint:gruntfile']
 			},
 			lib: {
-				files: '<%= jshint.app.src %>',
+				files: ['lib/*.js', 'lib/**/*.js'],
 				tasks: ['jshint:lib']
 			},
 			test: {
-				files: '<%= jshint.test.src %>',
-				tasks: ['jshint:test', 'buster']
+				files: ['test/*.js', 'test/**/*.js'],
+				tasks: ['jshint:test', 'simplemocha']
 			}
 		}
 	});
 
 	// These plugins provide necessary tasks.
-	grunt.loadNpmTasks('grunt-buster');
+	grunt.loadNpmTasks('grunt-simple-mocha');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 
 	// Default task.
-	grunt.registerTask('default', ['jshint', 'buster']);
+	grunt.registerTask('default', ['jshint', 'simplemocha:test']);
+	grunt.registerTask('test', 'simplemocha:test');
+	grunt.registerTask('mocha-doc', ['simplemocha:doc']);
+	grunt.registerTask('doc', ['concat']);
 
 };

@@ -1,8 +1,8 @@
 {
-	"name": "node-express-dispatcher",
+	"name": "yad",
 	"private": true,
-	"description": "Request dispatcher for Express. Supports controllers with asynchronous actions and abstracts response rendering.",
-	"version": "0.1.1",
+	"description": "Yet another dispatcher. For Express. Supports controllers with asynchronous actions and abstracts response rendering.",
+	"version": "0.1.2",
 	"author": {
 		"name": "Nik Butenko",
 		"email": "nik@butenko.me"
@@ -14,17 +14,18 @@
 		}
 	],
 	"dependencies": {
-		"underscore": "1.5.2"
+		"underscore": "1.x"
 	},
 	"devDependencies": {
-		"underscore": "~1.5.2",
-		"buster": "~0.7.8",
-		"grunt-buster": "~0.3.1",
+		"grunt": "~0.4.2",
+		"grunt-cli": "~0.1.13",
+		"grunt-simple-mocha": "~0.4.0",
 		"grunt-contrib-jshint": "~0.7.2",
 		"grunt-contrib-watch": "~0.5.3",
-		"grunt-contrib-requirejs": "~0.4.1",
-		"grunt": "~0.4.2",
-		"grunt-cli": "~0.1.11"
+		"mocha": "~1.17.1",
+		"chai": "~1.9.0",
+		"jscoverage": "~0.3.8",
+		"grunt-contrib-concat": "~0.3.0"
 	},
 	"keywords": [
 		"request dispatcher",
@@ -35,10 +36,10 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/nkbt/node-express-dispatcher.git"
+		"url": "git://github.com/nkbt/yad.git"
 	},
 	"bugs": {
-		"url": "http://github.com/nkbt/node-express-dispatcher/issues",
+		"url": "http://github.com/nkbt/yad/issues",
 		"email": "nik@butenko.me"
 	},
 	"main": "index",
