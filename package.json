@@ -1,8 +1,7 @@
 {
 	"name": "yad",
-	"private": true,
 	"description": "Yet another dispatcher. For Express. Supports controllers with asynchronous actions and abstracts response rendering.",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"author": {
 		"name": "Nik Butenko",
 		"email": "nik@butenko.me"
